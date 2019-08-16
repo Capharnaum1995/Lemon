@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--context:
+        id:A unique identifier for this context. This value will be used in some error messages.
+    -->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--用于实现分页的plugins-->
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
+        <!--不多讲，连接数据库必须的-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/community?serverTimezone=UTC"
+                        userId="root"
+                        password="xyb19960402">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!--生成model类（就是一个数据表映射成的一个类）存放的位置（必须定义的），其余的设置是可选择的-->
+        <javaModelGenerator targetPackage="com.lemon.community.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--生成映射文件的存放位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!--生成Dao类（在该项目中也就是我们定义的各种mapper）存放的位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lemon.community.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--个人理解这个是和生成model相关，做以下的设置后表user生成的对应的model名字就为User,还可以设置生成model时忽略某些列-->
+        <table tableName="user" domainObjectName="User"></table>
+        <table tableName="question" domainObjectName="Question"></table>
+        <table tableName="comment" domainObjectName="Comment"></table>
+        <table tableName="tag" domainObjectName="Tag"></table>
+        <table tableName="notification" domainObjectName="Notification"></table>
+    </context>
+</generatorConfiguration>

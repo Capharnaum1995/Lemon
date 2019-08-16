@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lemon社区</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/community.css"/>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js" type="application/javascript"></script>
+</head>
+<script type="application/javascript">
+    window.onload = function () {//页面加载完成后执行该函数
+        var isClose = window.localStorage.getItem("isClose");
+        if (isClose == "yes") {
+            window.close();//关闭当前窗口
+            window.localStorage.removeItem("isClose");//移除localStorage里面存储的东西
+        }
+    }
+</script>
+<body>
+<div th:insert="~{header :: h}"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-ms-12 col-sm-12 col-xs-12">
+            <h3><span class="glyphicon glyphicon-list" aria-hidden="true"></span>发现</h3>
+            <hr class="division">
+            <div class="media" th:each="question:${pagingDTO.data}">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object img-circle" th:src="${question.user.avatarUrl}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a th:href="@{'/question/'+${question.id}}"
+                                                 th:text="${question.title}"></a></h4>
+                    <span th:text="${question.description}"></span><br>
+                    <span class="question-info">ㆍ<span th:text="${question.commentCount}"></span>&nbsp;个回复&nbsp;&nbsp;ㆍ&nbsp;<span
+                            th:text="${question.viewCount}"></span>次浏览&nbsp;&nbsp;ㆍ<span
+                            th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span></span>
+                </div>
+                <hr class="division">
+            </div>
+            <!--分页板块-->
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li th:if="${pagingDTO.showFirstPage}">
+                        <a th:href="@{/(pageNow=1)}" aria-label="FirstPage">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li th:if="${pagingDTO.showPrevious}">
+                        <a th:href="@{/(pageNow=${(pagingDTO.pageNow)-1})}" aria-label="Previous">
+                            <span aria-hidden="true">&lt;</span>
+                        </a>
+                    </li>
+                    <li th:each="page:${pagingDTO.pageList}" th:class="${pagingDTO.pageNow==page}?'active':''">
+                        <a th:href="@{/(pageNow=${page})}" th:text="${page}"></a>
+                    </li>
+                    <li th:if="${pagingDTO.showNext}">
+                        <a th:href="@{/(pageNow=${(pagingDTO.pageNow)+1})}" aria-label="Next">
+                            <span aria-hidden="true">&gt;</span>
+                        </a>
+                    </li>
+                    <li th:if="${pagingDTO.showEndPage}">
+                        <a th:href="@{/(pageNow=${pagingDTO.pageCount})}" aria-label="EndPage">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-lg-3 col-ms-12 col-sm-12 col-xs-12">
+            <h4>热门话题</h4>
+        </div>
+    </div>
+</div>
+</body>
+</html>

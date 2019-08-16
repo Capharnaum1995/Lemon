@@ -1,0 +1,112 @@
+2019-08-15 19:02:23.951  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Starting DemoApplication on DESKTOP-GDAI524 with PID 4852 (started by Administrator in D:\工作空间\IJWorkSpace\demo)
+2019-08-15 19:02:23.956  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : No active profile set, falling back to default profiles: default
+2019-08-15 19:02:24.161  INFO 4852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-08-15 19:02:24.162  INFO 4852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-08-15 19:02:41.147  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-08-15 19:02:41.397  INFO 4852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-15 19:02:41.399  INFO 4852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-15 19:02:42.442  INFO 4852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-15 19:02:42.443  INFO 4852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 18274 ms
+2019-08-15 19:02:50.557  INFO 4852 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:02:51.953  INFO 4852 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-15 19:02:53.460  INFO 4852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-15 19:02:54.089  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-08-15 19:02:54.120  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Started DemoApplication in 31.67 seconds (JVM running for 39.507)
+2019-08-15 19:07:45.463  INFO 4852 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:07:50.469  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Starting DemoApplication on DESKTOP-GDAI524 with PID 4852 (started by Administrator in D:\工作空间\IJWorkSpace\demo)
+2019-08-15 19:07:50.472  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : No active profile set, falling back to default profiles: default
+2019-08-15 19:07:55.916  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-08-15 19:07:55.918  INFO 4852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-15 19:07:55.918  INFO 4852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-15 19:07:56.283  INFO 4852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-15 19:07:56.283  INFO 4852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5800 ms
+2019-08-15 19:07:58.594  INFO 4852 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:07:59.026  INFO 4852 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-15 19:07:59.509  INFO 4852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-15 19:07:59.641  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-08-15 19:07:59.642  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Started DemoApplication in 10.287 seconds (JVM running for 345.029)
+2019-08-15 19:07:59.663  INFO 4852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-15 19:08:02.852  INFO 4852 --- [Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:08:04.011  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Starting DemoApplication on DESKTOP-GDAI524 with PID 4852 (started by Administrator in D:\工作空间\IJWorkSpace\demo)
+2019-08-15 19:08:04.013  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : No active profile set, falling back to default profiles: default
+2019-08-15 19:08:05.370  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-08-15 19:08:05.374  INFO 4852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-15 19:08:05.375  INFO 4852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-15 19:08:05.517  INFO 4852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-15 19:08:05.518  INFO 4852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1498 ms
+2019-08-15 19:08:06.335  INFO 4852 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:08:06.487  INFO 4852 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-15 19:08:06.853  INFO 4852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-15 19:08:06.916  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-08-15 19:08:06.917  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Started DemoApplication in 3.004 seconds (JVM running for 352.305)
+2019-08-15 19:08:06.921  INFO 4852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-15 19:09:05.340  INFO 4852 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:09:08.399  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Starting DemoApplication on DESKTOP-GDAI524 with PID 4852 (started by Administrator in D:\工作空间\IJWorkSpace\demo)
+2019-08-15 19:09:08.402  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : No active profile set, falling back to default profiles: default
+2019-08-15 19:09:09.214  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-08-15 19:09:09.223  INFO 4852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-15 19:09:09.225  INFO 4852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-15 19:09:09.842  INFO 4852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-15 19:09:09.842  INFO 4852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1414 ms
+2019-08-15 19:09:10.227  INFO 4852 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:09:10.314  INFO 4852 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-15 19:09:10.524  INFO 4852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-15 19:09:10.565  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-08-15 19:09:10.567  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Started DemoApplication in 2.252 seconds (JVM running for 415.954)
+2019-08-15 19:09:10.570  INFO 4852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-15 19:09:18.572  INFO 4852 --- [Thread-21] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:09:20.243  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Starting DemoApplication on DESKTOP-GDAI524 with PID 4852 (started by Administrator in D:\工作空间\IJWorkSpace\demo)
+2019-08-15 19:09:20.244  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : No active profile set, falling back to default profiles: default
+2019-08-15 19:09:21.146  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-08-15 19:09:21.153  INFO 4852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-15 19:09:21.155  INFO 4852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-15 19:09:21.792  INFO 4852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-15 19:09:21.793  INFO 4852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1527 ms
+2019-08-15 19:09:22.067  INFO 4852 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:09:22.110  INFO 4852 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-15 19:09:22.230  INFO 4852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-15 19:09:22.255  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-08-15 19:09:22.256  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Started DemoApplication in 2.156 seconds (JVM running for 427.644)
+2019-08-15 19:09:22.258  INFO 4852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-15 19:09:42.384  INFO 4852 --- [Thread-27] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:09:44.280  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Starting DemoApplication on DESKTOP-GDAI524 with PID 4852 (started by Administrator in D:\工作空间\IJWorkSpace\demo)
+2019-08-15 19:09:44.281  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : No active profile set, falling back to default profiles: default
+2019-08-15 19:09:45.276  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-08-15 19:09:45.278  INFO 4852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-15 19:09:45.279  INFO 4852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-15 19:09:45.358  INFO 4852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-15 19:09:45.358  INFO 4852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1072 ms
+2019-08-15 19:09:45.780  INFO 4852 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:09:45.869  INFO 4852 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-15 19:09:46.032  INFO 4852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-15 19:09:46.063  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-08-15 19:09:46.068  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Started DemoApplication in 1.863 seconds (JVM running for 451.456)
+2019-08-15 19:09:46.072  INFO 4852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-15 19:10:00.486  INFO 4852 --- [Thread-33] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:10:01.082  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Starting DemoApplication on DESKTOP-GDAI524 with PID 4852 (started by Administrator in D:\工作空间\IJWorkSpace\demo)
+2019-08-15 19:10:01.082  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : No active profile set, falling back to default profiles: default
+2019-08-15 19:10:02.112  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-08-15 19:10:02.114  INFO 4852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-15 19:10:02.115  INFO 4852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-15 19:10:02.351  INFO 4852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-15 19:10:02.352  INFO 4852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1267 ms
+2019-08-15 19:10:02.640  INFO 4852 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:10:02.719  INFO 4852 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-15 19:10:02.883  INFO 4852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-15 19:10:02.919  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-08-15 19:10:02.920  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Started DemoApplication in 2.032 seconds (JVM running for 468.307)
+2019-08-15 19:10:02.922  INFO 4852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-15 19:11:24.562  INFO 4852 --- [Thread-39] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:11:26.542  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Starting DemoApplication on DESKTOP-GDAI524 with PID 4852 (started by Administrator in D:\工作空间\IJWorkSpace\demo)
+2019-08-15 19:11:26.543  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : No active profile set, falling back to default profiles: default
+2019-08-15 19:11:28.164  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-08-15 19:11:28.171  INFO 4852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-15 19:11:28.172  INFO 4852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-15 19:11:28.231  INFO 4852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-15 19:11:28.232  INFO 4852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1682 ms
+2019-08-15 19:11:28.967  INFO 4852 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-15 19:11:29.154  INFO 4852 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-15 19:11:29.650  INFO 4852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-15 19:11:29.775  INFO 4852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-08-15 19:11:29.777  INFO 4852 --- [restartedMain] com.lemon.community.DemoApplication      : Started DemoApplication in 4.437 seconds (JVM running for 555.164)
+2019-08-15 19:11:29.783  INFO 4852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

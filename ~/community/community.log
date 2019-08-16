@@ -1,0 +1,14 @@
+2019-08-15 14:09:23.581  INFO 10416 --- [restartedMain] com.lemon.community.DemoApplication      : Starting DemoApplication on DESKTOP-GDAI524 with PID 10416 (started by Administrator in D:\工作空间\IJWorkSpace\demo)
+2019-08-15 14:09:23.584  INFO 10416 --- [restartedMain] com.lemon.community.DemoApplication      : No active profile set, falling back to default profiles: default
+2019-08-15 14:09:24.789  INFO 10416 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-08-15 14:09:24.791  INFO 10416 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-08-15 14:09:52.034  INFO 10416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-08-15 14:09:52.212  INFO 10416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-15 14:09:52.213  INFO 10416 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-15 14:09:52.798  INFO 10416 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-15 14:09:52.799  INFO 10416 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 28007 ms
+2019-08-15 14:09:54.530  INFO 10416 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-15 14:09:54.785  INFO 10416 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-15 14:09:57.000  INFO 10416 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-15 14:09:57.111  INFO 10416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-08-15 14:09:57.145  INFO 10416 --- [restartedMain] com.lemon.community.DemoApplication      : Started DemoApplication in 40.29 seconds (JVM running for 62.434)

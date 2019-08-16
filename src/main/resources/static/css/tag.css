@@ -1,0 +1,82 @@
+.wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tag-selected {
+    width: 100%;
+    min-height: 38px;
+    margin: 10px 0;
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+
+.tag-selected li {
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-left: 2px;
+}
+
+.layui-btn {
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    background-color: #009688;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer
+}
+
+.layui-btn-sm {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 12px
+}
+
+.layui-btn:hover {
+    opacity: .8;
+    filter: alpha(opacity=80);
+    color: #fff
+}
+
+#labelItem {
+    margin-bottom: 10px;
+    display: none;
+}
+
+.label-item {
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+    border-radius: 0 2px 2px 0;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+
+.label-item li {
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 3px;
+    margin-left: 2px;
+}
+
+.label-item .selected {
+    color: #ccc;
+}
+
+.tag-validate {
+    background-color: #d9edf7;
+}
+
+
+

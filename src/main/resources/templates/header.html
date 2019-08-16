@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="h">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Lemon社区</span>
+                </button>
+                <a class="navbar-brand" href="/">Lemon社区</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="搜索话题">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <!--发布-->
+                    <li th:if="${session.user!=null}">
+                        <a href="/publish">发布</a>
+                    </li>
+                    <!--消息通知-->
+                    <li>
+                        <div class="row ">
+                            <div class="col-xs-6 my-message-bell">
+                                <a href="/profile/my-replies">
+                                    <span class="my-message-bell-btn">
+                                         <i class="glyphicon glyphicon-bell"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-xs-6" style="padding-left: 0px;padding-right: 18px;">
+                                <span class="my-message-bell-btn">
+                                     <span class="my-badge" th:text="${session.notificationCount}"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <!--个人中心-->
+                    <li class="dropdown" th:if="${session.user!=null}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <span th:text="${session.user.getName()}"></span><span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/profile/my-questions">我的问题</a></li>
+                            <li><a href="#">个人资料</a></li>
+                            <li><a href="/logout">退出登录</a></li>
+                        </ul>
+                    </li>
+                    <li th:if="${session.user==null}">
+                        <!--这一步是登录到授权的页面，需要传递的参数是：1.授权页面的地址。2.注册的Github的App的id。3.授权页面授权完成后需要重新跳转的页面的uri。4.???。5.state-->
+                        <a href="https://github.com/login/oauth/authorize?client_id=751da1a087d0187c3619&redirect_uri=http://localhost:8887/callback&scope=user&state=1">登录</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>
