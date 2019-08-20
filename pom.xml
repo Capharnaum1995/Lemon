@@ -108,10 +108,10 @@
                 <version>5.2.4</version>
                 <configuration>
                     <!--
-                    <url>jdbc:mysql://loclhost:8887/community?serverTimezone=UTC</url>
+                    <url>jdbc:mysql://loclhost:8887:3306/community?serverTimezone=UTC</url>
                     <password>xyb19960402</password>
                     -->
-                    <url>jdbc:mysql://192.168.0.99/community</url>
+                    <url>jdbc:mysql://192.168.0.99:3306/community</url>
                     <user>root</user>
                     <password>Xyb19960402</password>
                 </configuration>
