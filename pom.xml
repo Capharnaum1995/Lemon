@@ -102,15 +102,18 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            <!--
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.2.4</version>
                 <configuration>
-                    <url>jdbc:mysql://localhost:3306/community</url>
-                    <user>root</user>
+                    <!--
+                    <url>jdbc:mysql://loclhost:8887/community?serverTimezone=UTC</url>
                     <password>xyb19960402</password>
+                    -->
+                    <url>jdbc:mysql://192.168.0.99/community</url>
+                    <user>root</user>
+                    <password>Xyb19960402</password>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -120,7 +123,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            -->
         </plugins>
     </build>
 

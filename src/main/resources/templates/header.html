@@ -54,7 +54,10 @@
                     </li>
                     <li th:if="${session.user==null}">
                         <!--这一步是登录到授权的页面，需要传递的参数是：1.授权页面的地址。2.注册的Github的App的id。3.授权页面授权完成后需要重新跳转的页面的uri。4.???。5.state-->
+                        <!--
                         <a href="https://github.com/login/oauth/authorize?client_id=751da1a087d0187c3619&redirect_uri=http://localhost:8887/callback&scope=user&state=1">登录</a>
+                        -->
+                        <a th:href="@{https://github.com/login/oauth/authorize(client_id='751da1a087d0187c3619',redirect_uri=${#httpServletRequest.getRequestURL()+'callback'},scope='user',state='1')}">登录</a>
                     </li>
                 </ul>
 
