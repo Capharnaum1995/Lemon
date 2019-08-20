@@ -25,6 +25,24 @@
         <selectKey keyProperty="id" resultType="java.lang.Long" order="AFTER">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into comment(parent_id,type,commentator,gmt_create,content) values(#{parentId,jdbcType=BIGINT},#{type,jdbcType=INTEGER},#{commentator,jdbcType=BIGINT},#{gmtCreate,jdbcType=BIGINT},#{content,jdbcType=VARCHAR})
+        insert into comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            parent_id,type,commentator,gmt_create,content,
+            <if test="atId != null">
+                at_id,
+            </if>
+            <if test="originId != null">
+                origin_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            #{parentId,jdbcType=BIGINT},#{type,jdbcType=INTEGER},#{commentator,jdbcType=BIGINT},#{gmtCreate,jdbcType=BIGINT},#{content,jdbcType=VARCHAR},
+            <if test="atId != null">
+                #{atId,jdbcType=BIGINT},
+            </if>
+            <if test="originId != null">
+                #{originId,jdbcType=BIGINT},
+            </if>
+        </trim>
     </insert>
 </mapper>

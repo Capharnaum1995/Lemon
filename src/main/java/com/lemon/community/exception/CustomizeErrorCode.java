@@ -2,7 +2,7 @@ package com.lemon.community.exception;
 
 public enum CustomizeErrorCode implements ICustomizeErrorCode {
     QUESTION_NOT_FOUND(2001, "o_o 你要找的问题好像已经不在了..."),
-    NOT_LOGIN(2002, "o_o 发表评论失败，原因：未登录。"),
+    NOT_LOGIN(2002, "o_o 评论发表失败，需要现在登陆吗？"),
     PARENT_COMMENT_LOST(2003, "o_o 评论失败，原因：parentComment丢失。"),
     COMMENT_TYPE_WRONG(2004, "o_o 评论失败，原因：type错误或不存在。"),
     PARENT_COMMENT_NOT_FOUND(2005, "o_o 评论失败，原因：该评论已被删除，请刷新页面"),

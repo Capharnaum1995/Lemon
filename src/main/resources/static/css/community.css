@@ -49,6 +49,11 @@ hr.division {
     padding-left: 80px;
 }
 
+.avatar-middle {
+    width: 45px;
+    height: 45px;
+}
+
 .avatar-small {
     width: 35px;
     height: 35px;
@@ -230,3 +235,37 @@ hr.division {
     color: #eb7350;
 }
 
+/**question页面*/
+.comment-reply {
+    float: right;
+    padding: 0 5px;
+    margin-right: 15px;
+    cursor: pointer;;
+    color: #99a2aa;
+}
+
+.comment-reply:hover {
+    text-decoration: none;
+    color: #1890ff;
+}
+
+.comment-user-name {
+    color: #6d757a;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.comment-user-name:hover {
+    color: #1890ff;
+}
+
+.reply-area {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding-right: 30px;
+}
+
+.reply-input {
+    padding-top: 8px;
+    padding-bottom: 6px;
+}

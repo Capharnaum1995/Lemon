@@ -2,6 +2,7 @@ package com.lemon.community.service;
 
 import com.lemon.community.dto.NotificationDTO;
 import com.lemon.community.dto.PagingDTO;
+import com.lemon.community.enums.CommentTypeEnum;
 import com.lemon.community.enums.NotificationStatusEnum;
 import com.lemon.community.enums.NotificationTypeEnum;
 import com.lemon.community.mapper.CommentMapper;
@@ -63,26 +64,33 @@ public class NotificationService {
         //notifications-->notificationDTOS
         List<NotificationDTO> notificationDTOS = notifications.stream().map(notification -> {
             NotificationDTO notificationDTO = new NotificationDTO();
-            User commenter = userMapper.selectByPrimaryKey(notification.getCommenter());
-            Long gmtCreate = notification.getGmtCreate();
-            String content = notification.getContent();
+            Comment comment = commentMapper.selectByPrimaryKey(notification.getCommentId());
+            User commenter = userMapper.selectByPrimaryKey(comment.getCommentator());
+            String content = comment.getContent();
+
             Integer notifyType = null;
             String originContent = null;
             Long id1 = null;
-            if (notification.getType() == NotificationTypeEnum.COMMENT.getType()) {
+            if (comment.getType() == CommentTypeEnum.COMMENT.getType()) { //1.是评论
                 notifyType = NotificationTypeEnum.COMMENT.getType();
-                Question question = questionMapper.selectByPrimaryKey(notification.getOriginId());
+                Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
                 originContent = question.getTitle();
                 id1 = question.getId();
-            } else {
-                notifyType = NotificationTypeEnum.REPLY.getType();
-                Comment comment = commentMapper.selectByPrimaryKey(notification.getOriginId());
-                originContent = comment.getContent();
-                Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
+            } else {                                                      //2.是回复
+                Comment parentComment = commentMapper.selectByPrimaryKey(comment.getParentId());
+                Question question = questionMapper.selectByPrimaryKey(parentComment.getParentId());
                 id1 = question.getId();
+                if (comment.getAtId() == null) {                              //2.1 普通的回复
+                    notifyType = NotificationTypeEnum.REPLY.getType();
+                    originContent = parentComment.getContent();
+                } else {                                                      //2.2 @的
+                    notifyType = NotificationTypeEnum.AT.getType();
+                    Comment originComment = commentMapper.selectByPrimaryKey(comment.getOriginId());
+                    originContent = originComment.getContent();
+                }
             }
             notificationDTO.setCommenter(commenter);
-            notificationDTO.setGmtCreate(gmtCreate);
+            notificationDTO.setGmtCreate(notification.getGmtCreate());
             notificationDTO.setContent(content);
             notificationDTO.setNotifyType(notifyType);
             notificationDTO.setOriginContent(originContent);

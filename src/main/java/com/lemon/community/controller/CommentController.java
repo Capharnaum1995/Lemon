@@ -6,6 +6,7 @@ import com.lemon.community.dto.ResultDTO;
 import com.lemon.community.enums.CommentTypeEnum;
 import com.lemon.community.exception.CustomizeErrorCode;
 import com.lemon.community.mapper.CommentMapper;
+import com.lemon.community.mapper.UserMapper;
 import com.lemon.community.model.Comment;
 import com.lemon.community.model.User;
 import com.lemon.community.service.CommentService;
@@ -28,11 +29,13 @@ public class CommentController {
     private CommentService commentService;
     @Autowired
     private CommentMapper commentMapper;
+    @Autowired
+    private UserMapper userMapper;
 
     @ResponseBody
     @RequestMapping(value = "/comment", method = RequestMethod.POST)
     public Object doComment(@RequestBody CommentCreateDTO commentCreateDTO,
-                       HttpServletRequest request) {
+                            HttpServletRequest request) {
         //验证工作
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {//验证是否已经登录（登录后才能回复）,如果是未登陆的话返回前端一个错误的状态码
@@ -48,17 +51,21 @@ public class CommentController {
         comment.setCommentator(user.getId());
         Long id = commentService.insert(comment);  //插入数据库，成功后返回该条记录的主键
         //需要获取到这个评论对象
-        comment=commentMapper.selectByPrimaryKey(id);
-        CommentDTO commentDTO=new CommentDTO();
-        BeanUtils.copyProperties(comment,commentDTO);
+        comment = commentMapper.selectByPrimaryKey(id);
+        CommentDTO commentDTO = new CommentDTO();
+        BeanUtils.copyProperties(comment, commentDTO);
         commentDTO.setUser(user);
+        if (comment.getAtId() != null) {  //如果comment有艾特对象，需要加入艾特对象
+            User atTarget = userMapper.selectByPrimaryKey(comment.getAtId());
+            commentDTO.setAtTarget(atTarget);
+        }
         return ResultDTO.okOf(commentDTO);
     }
 
     @ResponseBody
     @RequestMapping(value = "/comment/{id}", method = RequestMethod.GET)
     public ResultDTO<List<CommentDTO>> comment(@PathVariable(name = "id") Long id) {
-        List<CommentDTO> commentDTOS = commentService.getCommentListByPId(id, CommentTypeEnum.COMMENT);
+        List<CommentDTO> commentDTOS = commentService.getCommentListByPId(id, CommentTypeEnum.REPLY);
         return ResultDTO.okOf(commentDTOS);
     }
 

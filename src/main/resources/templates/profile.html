@@ -67,6 +67,7 @@
                                 <div class="WB_text">
                                     <span th:if="${notification.notifyType==1}">回复我的问题：</span>
                                     <span th:if="${notification.notifyType==2}">回复我的评论：</span>
+                                    <span th:if="${notification.notifyType==3}">@我的：</span>
                                     <a th:href="@{'/question/'+${notification.id}}">
                                         <span class="S_func1" th:text="${notification.originContent}"></span>
                                     </a>

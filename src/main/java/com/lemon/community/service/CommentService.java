@@ -3,7 +3,6 @@ package com.lemon.community.service;
 import com.lemon.community.dto.CommentDTO;
 import com.lemon.community.enums.CommentTypeEnum;
 import com.lemon.community.enums.NotificationStatusEnum;
-import com.lemon.community.enums.NotificationTypeEnum;
 import com.lemon.community.exception.CustomizeErrorCode;
 import com.lemon.community.exception.CustomizeException;
 import com.lemon.community.mapper.*;
@@ -51,7 +50,7 @@ public class CommentService {
         if (comment.getType() == null || !CommentTypeEnum.isExist(comment.getType())) {
             throw new CustomizeException(CustomizeErrorCode.COMMENT_TYPE_WRONG);
         }
-        if (comment.getType() == CommentTypeEnum.QUESTION.getType()) {
+        if (comment.getType() == CommentTypeEnum.COMMENT.getType()) {
             //评论
             Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
             if (question == null) {
@@ -62,10 +61,10 @@ public class CommentService {
                 question.setCommentCount(1L);
                 questionMapperExt.increaseCommentCount(question);
                 //进行消息通知的逻辑处理
-                createNotification(comment, question.getCreator(), question.getId(), NotificationTypeEnum.COMMENT);
+                createNotification(comment, question.getCreator());
             }
         } else {
-            //回复
+            //回复,分为@的和普通的回复
             Comment parentComment = commentMapper.selectByPrimaryKey(comment.getParentId());//获取父评论(你回复的时候前端显示父评论还存在，但可能在你“提交评论”之前父评论已经删除了，这里需要再做一次验证。)
             if (parentComment == null) {
                 throw new CustomizeException(CustomizeErrorCode.PARENT_COMMENT_NOT_FOUND);
@@ -75,7 +74,11 @@ public class CommentService {
                 parentComment.setCommentCount(1L);
                 commentMapperExt.increaseCommentCount(parentComment);
                 //进行消息通知的逻辑处理
-                createNotification(comment, parentComment.getCommentator(), parentComment.getId(), NotificationTypeEnum.REPLY);
+                if (comment.getAtId() == null) {  //1.普通的回复
+                    createNotification(comment, parentComment.getCommentator());
+                } else {                        //2.是@的回复，将receiver改成comment.getAtId()
+                    createNotification(comment, comment.getAtId());
+                }
             }
         }
         return commentId;
@@ -87,15 +90,12 @@ public class CommentService {
      * @param comment  comment对象
      * @param receiver 消息的接收者
      */
-    private void createNotification(Comment comment, Long receiver, Long originId, NotificationTypeEnum notificationTypeEnum) {
+    private void createNotification(Comment comment, Long receiver) {
         Notification notification = new Notification();
-        notification.setCommenter(comment.getCommentator());                    //设置通知的发送者
         notification.setReceiver(receiver);                                     //设置通知的接收者
-        notification.setOriginId(originId);                                     //设置通知的源id
-        notification.setType(notificationTypeEnum.getType());                   //设置通知的类型
-        notification.setContent(comment.getContent());                          //设置通知的内容
         notification.setStatus(NotificationStatusEnum.UN_READ.getStatus());     //设置消息为未读状态
-        notification.setGmtCreate(comment.getGmtCreate());                      //设置通知的创建时间
+        notification.setCommentId(comment.getId());
+        notification.setGmtCreate(comment.getGmtCreate());
         notificationMapper.insertSelective(notification);                       //将通知添加进数据库
     }
 
@@ -126,11 +126,28 @@ public class CommentService {
         userExample.createCriteria().andIdIn(userIdList);
         List<User> users = userMapper.selectByExample(userExample);
         Map<Long, User> userMap = users.stream().collect(Collectors.toMap(user -> user.getId(), user -> user));
+
+        //4.获取commentList中所有atId并去重...类似于2，3
+        Set<Comment> var = comments.stream().filter(comment -> comment.getAtId() != null).collect(Collectors.toSet());
+        Set<Long> atTargetIdSet = var.stream().map(comment -> comment.getAtId()).collect(Collectors.toSet());
+        List<Long> atTargetIdList = new ArrayList<>();
+        atTargetIdList.addAll(atTargetIdSet);
+        List<User> atTargetUser = new ArrayList<>();
+        if (atTargetIdList.size() > 0) {
+            UserExample userExample1 = new UserExample();
+            userExample1.createCriteria().andIdIn(atTargetIdList);
+            atTargetUser = userMapper.selectByExample(userExample1);
+        }
+        Map<Long, User> atTargetMap = atTargetUser.stream().collect(Collectors.toMap(var1 -> var1.getId(), var1 -> var1));
+
         //将comment和对应的user对象封装成commentDTO对象，
         List<CommentDTO> commentDTOS = comments.stream().map(comment -> {
             CommentDTO commentDTO = new CommentDTO();
             BeanUtils.copyProperties(comment, commentDTO);
             commentDTO.setUser(userMap.get(comment.getCommentator()));
+            if (comment.getAtId() != null) {
+                commentDTO.setAtTarget(atTargetMap.get(comment.getAtId()));
+            }
             return commentDTO;
         }).collect(Collectors.toList());
         return commentDTOS;

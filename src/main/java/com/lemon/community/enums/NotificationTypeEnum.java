@@ -1,8 +1,9 @@
 package com.lemon.community.enums;
 
 public enum NotificationTypeEnum {
-    COMMENT(1, "评论了你的问题"),
-    REPLY(2, "回复了你的评论");
+    COMMENT(1, "评论了我的问题"),
+    REPLY(2, "回复了我的评论"),
+    AT(3, "@了我");
     private Integer type;
     private String actionName;
 

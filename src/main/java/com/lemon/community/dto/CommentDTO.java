@@ -16,5 +16,6 @@ public class CommentDTO {
     private Long commentCount;
     private Long likeCount;
     private String content;
-    private User user;
+    private User user;          //comment的创建者
+    private User atTarget;      //comment的艾特对象，optional
 }
