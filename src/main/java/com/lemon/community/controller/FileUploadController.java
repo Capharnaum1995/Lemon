@@ -18,8 +18,8 @@ public class FileUploadController {
     @Autowired
     private UCloudProvider uCloudProvider;
 
-    @RequestMapping("/file/upload")
     @ResponseBody
+    @RequestMapping("/file/upload")
     public FileUploadDTO upload(HttpServletRequest request) {
         MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
         MultipartFile file = multipartHttpServletRequest.getFile("editormd-image-file");

@@ -58,7 +58,6 @@ public class AuthorizeController {
             log.error("callback get GitHub error,{}", githubUser);
             return "redirect:/";
         }
-
     }
 
     //安全退出
