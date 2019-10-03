@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * 使用@RequestBody就可以将接收到的json格式的的数据准转化对象
- * 该例中，使用@ResponseBody注解可以将返回的对象转化为json格式的“东西”发送到前端。这样用起来就很方便了
+ * 该例中，使用@ResponseBody注解可以将返回的对象转化为json数据发送到前端。这样用起来就很方便了
  */
 @Controller
 public class CommentController {

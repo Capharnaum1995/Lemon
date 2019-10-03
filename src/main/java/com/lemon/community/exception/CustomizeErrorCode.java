@@ -6,7 +6,7 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     PARENT_COMMENT_LOST(2003, "o_o 评论失败，原因：parentComment丢失。"),
     COMMENT_TYPE_WRONG(2004, "o_o 评论失败，原因：type错误或不存在。"),
     PARENT_COMMENT_NOT_FOUND(2005, "o_o 评论失败，原因：该评论已被删除，请刷新页面"),
-    COMMENT_FORMAT_WRONG(2006, "回复内容的格式有误！"),
+    COMMENT_FORMAT_WRONG(2006, "o_o 回复内容的格式有误哦！"),
     SYSTEM_ERROR(2009, "o_o 服务器冒烟了，稍后再试一下吧！");
 
     @Override

@@ -10,27 +10,30 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * ErrorController可以处理所有的异常（我们已经处理了一些已知的异常，但还有一些异常是预料不到的）
+ * 跳转到错误的页面。
+ * ErrorController可以处理所有的异常。前面通过CustomizeExceptionHandler已经处理了一些已知的错误异常，并将这些已知的错误和异常信息返回页面给用户，
+ * 但是有时候还是有一些没有预料到的4xx，5xx的异常我们还没有处理，此时留给该Controller进行处理，同时页面跳转。
  * 取代默认的异常处理，只需要继承ErrorController
+ * 可以参照BasicErrorController类的写法
  */
 @Controller
-@RequestMapping({"${server.error.path:${error.path:/error}}"})
+@RequestMapping("${server.error.path:${error.path:/error}}")
 public class CustomizeErrorController implements ErrorController {
     @Override
+    //Returns the path of the error page.
     public String getErrorPath() {
         return "error";
     }
 
-    @RequestMapping(produces = {"text/html"}
-    )
+    @RequestMapping(produces = {"text/html"})
     public ModelAndView errorHtml(HttpServletRequest request,
                                   Model model) {
         HttpStatus status = this.getStatus(request);
-        if (status.is4xxClientError()) {//是4**的问题,一般都是客户端的问题
-            model.addAttribute("message", "*****您的请求有误，要不换个姿势？");
+        if (status.is4xxClientError()) {//是4xx的问题,客户端的问题
+            model.addAttribute("message", "*****您的客户端出现异常，要不换个姿势？");
         }
-        if (status.is5xxServerError()) {//5**的问题，一般都是服务器端出现的问题
-            model.addAttribute("message", "*****服务器冒烟了，我们会尽快解决...");
+        if (status.is5xxServerError()) {//5xx的问题，服务端出现的问题
+            model.addAttribute("message", "*****服务器冒烟了，我们会尽快解决哒...");
         }
         return new ModelAndView("error");
     }

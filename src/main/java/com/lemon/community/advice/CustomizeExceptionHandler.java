@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * 使用@ControllerAdvice和@ExceptionHandler配合处理全局异常
+ */
 @ControllerAdvice
 public class CustomizeExceptionHandler {
     @ExceptionHandler(Exception.class)
@@ -22,7 +25,7 @@ public class CustomizeExceptionHandler {
                         HttpServletRequest request,
                         HttpServletResponse response) {//捕获到异常的处理方法
         String contentType = request.getContentType();
-        if ("application/json".equals(contentType)) {//如果返回的是json对象（request的Content-Type是我们自己定义的），则说明当前页面的异常我们希望不要跳转，只在当前页面提示错误信息
+        if ("application/json".equals(contentType)) {//如果返回的是json对象，则说明当前页面的异常我们希望不要跳转，只在当前页面弹出错误提示框
             ResultDTO resultDTO;
             if (e instanceof CustomizeException) {
                 resultDTO = ResultDTO.errorOf((CustomizeException) e);//显示的抛出的异常
@@ -40,7 +43,7 @@ public class CustomizeExceptionHandler {
             } catch (IOException ex) {
             }
             return null;
-        } else {//Content-Type不是json对象，我们选择做页面跳转
+        } else {//返回的数据类型不是json对象，我们选择做页面跳转
             if (e instanceof CustomizeException) {
                 model.addAttribute("message", e.getMessage());
             } else {
